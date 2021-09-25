@@ -1,0 +1,2 @@
+# ezeugo.dev
+My Blog
