@@ -12,10 +12,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData }) {
-  const posts = [];
-  for (const post of [...Array(1).keys()]) {
-    posts.push(<Link href={`/posts/${post}`}>My First Post</Link>);
-  }
   return (
     <div className={styles.container}>
       Welcome to the blog. Check out my posts below.
@@ -23,11 +19,13 @@ export default function Home({ allPostsData }) {
         <h2>Blog</h2>
         <ul>
           {allPostsData.map(({ id, date, title }) => (
-            <li key={id}>
-              {title}
-              <br />
-              {date}
-            </li>
+            <Link key={id} href={`/posts/${id}`}>
+              <li>
+                {title}
+                <br />
+                {date}
+              </li>
+            </Link>
           ))}
         </ul>
       </section>
