@@ -61,7 +61,6 @@ export async function getPostData(id) {
   const contentHtml = processedContent.toString();
 
   // Combine the data with the id
-  console.log(contentHtml);
   return {
     id,
     contentHtml,
