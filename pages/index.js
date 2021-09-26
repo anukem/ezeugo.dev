@@ -19,9 +19,10 @@ export default function Home({ allPostsData }) {
         <h2>Blog</h2>
         <ul>
           {allPostsData.map(({ id, date, title }) => (
+            // eslint-disable-next-line @next/next/link-passhref
             <Link key={id} href={`/posts/${id}`}>
               <li>
-                "test"
+                `&quot;`test`&quot;`
                 {title}
                 <br />
                 {date}
