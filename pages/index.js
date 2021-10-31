@@ -14,22 +14,16 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }) {
   return (
     <div className={styles.container}>
-      Welcome to the blog. Check out my posts below.
+      Welcome to the blog.
       <section>
-        <h2>Blog</h2>
-        <ul>
-          {allPostsData.map(({ id, date, title }) => (
-            // eslint-disable-next-line @next/next/link-passhref
-            <Link key={id} href={`/posts/${id}`}>
-              <li>
-                `&quot;`test`&quot;`
-                {title}
-                <br />
-                {date}
-              </li>
-            </Link>
-          ))}
-        </ul>
+        {allPostsData.map(({ id, date, title }) => (
+          <Link key={id} href={`/posts/${id}`} passHref>
+            <a>
+              <div>{title}</div>
+              {date}
+            </a>
+          </Link>
+        ))}
       </section>
     </div>
   );
