@@ -22,3 +22,5 @@ As I saw it, there were 2 major issues, one of which I found a resolution for, b
 The first was an issue with figuring out how to have two seperate processes running at the same time. The first process was meant to be
 responsible for keeping track of how much time was left to continue typing. The second process was supposed to continually accept user input
 and validate that the word matched the target. Having no internet connection I had no way of googling how to handle async operations in python.
+
+_note to self to try to figure out terminal gui's using some third party_
