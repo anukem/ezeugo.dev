@@ -1,6 +1,6 @@
 ---
 title: My name is Ezeugo?
-date: "09.25.21" (Edited on 1.16.21)
+date: "09.25.21"
 ---
 
 Names are a really interesting concept. In some ways, they're meant to be this unique identifier
@@ -39,5 +39,7 @@ From there, the answer was obvious. I was and will continue to be Ezeugo in ever
 it represents what I believe are the best parts of who I am, but also as an act of resistance against what
 would otherwise be the norm in my life. Every call and response is a reaffirmation of the notion that who
 I am and what I'm about is rooted in a culture of strength, and honor that inform every action I take.
+
+(Edited on 1.16.21)
 
 [^1]: I recently found that there's a couple other people with the name Ezeugo (or at least what they claim on Clubhouse).
