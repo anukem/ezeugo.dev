@@ -1,10 +1,11 @@
 .container {
-  height: 100px;
+  height: 150px;
   padding: 0px 20px;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+  border-bottom: 1px solid #dfdede;
 }
 
 .title {
@@ -22,11 +23,36 @@
 }
 
 .searchContainer {
-  background-color: #434343;
   display: flex;
   margin: auto;
-  padding: 12px 22px;
-  cursor: pointer;
+  padding: 12px 26px 12px 22px;
   border-radius: 3px;
-  width: fit-content;
+}
+
+.searchContainer.searchBackground {
+  cursor: pointer;
+}
+
+.searchBackground {
+  background-color: #434343;
+}
+
+.input {
+  width: 0px;
+  transition: width 2s ease-in;
+  background-color: #434343;
+  border: none;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid transparent;
+}
+
+.input.isSearching {
+  width: 200px;
+  background-color: #fafafa;
+  border: 2px solid #dfdede;
+  height: 30px;
+  padding-left: 5px;
 }

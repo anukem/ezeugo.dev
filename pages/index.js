@@ -12,20 +12,21 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData }) {
-  return (
-    <div className={styles.container}>
-      Welcome to the blog. You can see past versions of the site{" "}
-      <Link href={`/versions`}>here</Link>
-      <section>
-        {allPostsData.map(({ id, date, title }) => (
-          <Link key={id} href={`/posts/${id}`} passHref>
-            <a>
-              <div>{title}</div>
-              {date}
-            </a>
-          </Link>
-        ))}
-      </section>
-    </div>
-  );
+  return <div />;
+  // return (
+  //   <div className={styles.container}>
+  //     Welcome to the blog. You can see past versions of the site{" "}
+  //     <Link href={`/versions`}>here</Link>
+  //     <section>
+  //       {allPostsData.map(({ id, date, title }) => (
+  //         <Link key={id} href={`/posts/${id}`} passHref>
+  //           <a>
+  //             <div>{title}</div>
+  //             {date}
+  //           </a>
+  //         </Link>
+  //       ))}
+  //     </section>
+  //   </div>
+  // );
 }
