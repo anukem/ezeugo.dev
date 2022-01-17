@@ -1,7 +1,8 @@
-import styles from "../styles/home.module.scss";
-import Link from "next/link";
-import { getSortedPostsData } from "../lib/posts";
-import { PageNumber } from "../components/posts/page-number";
+import styles from "@styles/home.module.scss";
+// import Link from "next/link";
+import { getSortedPostsData } from "lib/posts";
+import { PageNumber } from "@components/posts/page-number";
+import { useState } from "react";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -13,14 +14,24 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData }) {
+  const [selectedPost, setSelectedPost] = useState(1);
+
+  const pageNumbers = [...Array(4).keys()]
+    .map((i) => i + 1)
+    .map((i) => {
+      return (
+        <PageNumber
+          onClick={() => setSelectedPost(i)}
+          key={i + "_page"}
+          n={i}
+          isSelected={selectedPost === i}
+        />
+      );
+    });
+
   return (
     <div className={styles.pageContainer}>
-      <div className={styles.articleColumn}>
-        <PageNumber isSelected n={1} />
-        <PageNumber n={2} />
-        <PageNumber n={3} />
-        <PageNumber n={4} />
-      </div>
+      <div className={styles.pageNumberColumn}>{pageNumbers}</div>
     </div>
   );
   // return (

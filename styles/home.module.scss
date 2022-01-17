@@ -67,7 +67,7 @@
   grid-template-rows: 1fr;
 }
 
-.articleColumn {
+.pageNumberColumn {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -75,11 +75,6 @@
   grid-column: 1;
   height: calc(100vh - 150px);
   padding: 250px 0px;
-}
-
-.pageNumber {
-  font-size: 35px;
-  font-family: "Open Sans Condensed", sans-serif;
 }
 
 .code {
