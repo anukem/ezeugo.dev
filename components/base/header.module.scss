@@ -1,0 +1,32 @@
+.container {
+  height: 100px;
+  padding: 0px 20px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin: auto;
+  font-size: 22px;
+  grid-column: 2;
+}
+
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+}
+
+.searchContainer {
+  background-color: #434343;
+  display: flex;
+  margin: auto;
+  padding: 12px 22px;
+  cursor: pointer;
+  border-radius: 3px;
+  width: fit-content;
+}
