@@ -14,21 +14,26 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ allPostsData }) {
+interface PostData {
+  date: string;
+  id: string;
+  title: string;
+  image?: string;
+}
+
+export default function Home({ allPostsData }: { allPostsData: PostData[] }) {
   const [selectedPost, setSelectedPost] = useState(1);
 
-  const pageNumbers = [...Array(4).keys()]
-    .map((i) => i + 1)
-    .map((i) => {
-      return (
-        <PageNumber
-          onClick={() => setSelectedPost(i)}
-          key={i + "_page"}
-          n={i}
-          isSelected={selectedPost === i}
-        />
-      );
-    });
+  const pageNumbers = allPostsData.map((postData, i) => {
+    return (
+      <PageNumber
+        onClick={() => setSelectedPost(i)}
+        key={i + 1 + "_page"}
+        n={i + 1}
+        isSelected={selectedPost === i}
+      />
+    );
+  });
 
   return (
     <div className={styles.pageContainer}>
