@@ -16,3 +16,27 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "Dongle";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Dongle"), url(/fonts/Dongle-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Dongle-Light";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Dongle"), url(/fonts/Dongle-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Dongle-Bold";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Dongle"), url(/fonts/Dongle-Bold.ttf) format("truetype");
+}

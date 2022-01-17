@@ -1,6 +1,7 @@
 ---
 title: My name is Ezeugo?
 date: "09.25.21"
+image: "/images/fire.png"
 ---
 
 Names are a really interesting concept. In some ways, they're meant to be this unique identifier
