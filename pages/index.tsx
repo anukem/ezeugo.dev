@@ -46,7 +46,7 @@ export default function Home({ allPostsData }) {
         <div className={styles.explainerSubtitle}>Introduction</div>
         <div className={styles.paragraphText}>
           Hey, welcome to my blog and personal site. I'm ezeugo, an engineer,
-          philosopher, and part time smash ultimate player. I graduated from
+          over thinker, and part time smash ultimate player. I graduated from
           Columbia University in 2018 and since then have worked as an engineer
           @ Microsoft in the Windows Mixed Reality Team, and currently work as a
           software engineer at a
