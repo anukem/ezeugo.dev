@@ -1,6 +1,5 @@
 import styles from "@styles/home.module.scss";
 import classNames from "classnames";
-// import Link from "next/link";
 import { getSortedPostsData } from "lib/posts";
 import { PageNumber } from "@components/posts/page-number";
 import { useState } from "react";
@@ -33,22 +32,36 @@ export default function Home({
 
   const post = allPostsData[selectedPost];
 
-  const pageNumbers = allPostsData
-    .filter((post) => post.title.toLowerCase().includes(search.toLowerCase()))
-    .map((_, i) => {
-      return (
-        <PageNumber
-          onClick={() => setSelectedPost(i)}
-          key={i + 1 + "_page"}
-          n={i + 1}
-          isSelected={selectedPost === i}
-        />
-      );
-    });
+  const filteredPosts = allPostsData.filter((post) =>
+    post.title.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const pageNumbers = filteredPosts.map((_, i) => {
+    return (
+      <PageNumber
+        onClick={() => setSelectedPost(i)}
+        key={i + 1 + "_page"}
+        n={i + 1}
+        isSelected={selectedPost === i}
+      />
+    );
+  });
 
   return (
     <div className={styles.pageContainer}>
-      <div className={styles.searchOverlay}></div>
+      <div className={styles.searchOverlay}>
+        <div className={styles.searchModal}>
+          {filteredPosts.map((post, i) => {
+            return (
+              <div className={styles.collage}>
+                <img className={styles.searchImage} src={post.image} />
+                <div className={styles.subject}>{Subject.Personal}</div>
+                <div className={styles.searchTitle}>{post.title}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
       <div className={styles.pageNumberColumn}>{pageNumbers}</div>
       <div className={styles.articleColumn}>
         <Article

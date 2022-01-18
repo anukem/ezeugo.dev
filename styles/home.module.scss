@@ -1,4 +1,5 @@
 $mid-sized-dot-size: 20px;
+$modal-size: 500px;
 
 .container {
   min-height: 100vh;
@@ -21,6 +22,15 @@ $mid-sized-dot-size: 20px;
 
 .spacer {
   height: 150px;
+}
+
+.subject {
+  color: #f17672;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Dongle-Light";
+  font-size: 23px;
+  letter-spacing: 0.89px;
 }
 
 .midSizedDot {
@@ -73,17 +83,47 @@ $mid-sized-dot-size: 20px;
 }
 
 .searchOverlay {
-  grid-area: middle;
+  grid-area: left / left / middle / middle;
   grid-row-start: left;
-  background-color: red;
+  background-color: #434343f2;
   position: relative;
+  display: flex;
 }
 
-.searchContent {
-  background-color: red;
-  height: calc(100vh - 150px);
-  position: absolute;
-  bottom: 0;
+.collage {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.searchTitle {
+  font-size: 28px;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.searchModal {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  border: 3px solid white;
+  border-radius: 20px;
+  opacity: 1;
+  margin: auto;
+  align-items: center;
+  background-color: #fafafa;
+  height: $modal-size;
+  width: $modal-size;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 0px 60px;
+}
+
+.searchImage {
+  width: 300px;
+  margin-bottom: 10px;
+  height: 300px;
 }
 
 .articleColumn {
