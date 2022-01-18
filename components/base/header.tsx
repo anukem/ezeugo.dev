@@ -1,12 +1,14 @@
 import styles from "./header.module.scss";
 import Link from "next/link";
-import { useState } from "react";
+import { cloneElement, useState } from "react";
 import classNames from "classnames";
 import { COLORS } from "../constants/constants";
 import { Search } from "../icons/search";
 
 export default function Header({ children }) {
   const [isSearching, toggleSearch] = useState(false);
+
+  const [search, setSearch] = useState("");
 
   return (
     <>
@@ -25,6 +27,7 @@ export default function Header({ children }) {
           })}
         >
           <input
+            onChange={(e) => setSearch(e.target.value)}
             className={classNames(styles.input, {
               [styles.isNotSearching]: !isSearching,
               [styles.isSearching]: isSearching,
@@ -35,7 +38,7 @@ export default function Header({ children }) {
           </div>
         </div>
       </div>
-      {children}
+      {cloneElement(children, { search })}
     </>
   );
 }

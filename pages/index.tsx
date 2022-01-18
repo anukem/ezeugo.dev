@@ -4,6 +4,7 @@ import classNames from "classnames";
 import { getSortedPostsData } from "lib/posts";
 import { PageNumber } from "@components/posts/page-number";
 import { useState } from "react";
+import { Article, Subject } from "@components/posts/article";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -21,29 +22,41 @@ interface PostData {
   image?: string;
 }
 
-export default function Home({ allPostsData }: { allPostsData: PostData[] }) {
+export default function Home({
+  allPostsData,
+  search,
+}: {
+  allPostsData: PostData[];
+  search: string;
+}) {
   const [selectedPost, setSelectedPost] = useState(1);
 
-  const pageNumbers = allPostsData.map((postData, i) => {
-    return (
-      <PageNumber
-        onClick={() => setSelectedPost(i)}
-        key={i + 1 + "_page"}
-        n={i + 1}
-        isSelected={selectedPost === i}
-      />
-    );
-  });
+  const post = allPostsData[selectedPost];
+
+  const pageNumbers = allPostsData
+    .filter((post) => post.title.toLowerCase().includes(search.toLowerCase()))
+    .map((_, i) => {
+      return (
+        <PageNumber
+          onClick={() => setSelectedPost(i)}
+          key={i + 1 + "_page"}
+          n={i + 1}
+          isSelected={selectedPost === i}
+        />
+      );
+    });
 
   return (
     <div className={styles.pageContainer}>
+      <div className={styles.searchOverlay}></div>
       <div className={styles.pageNumberColumn}>{pageNumbers}</div>
       <div className={styles.articleColumn}>
-        <div className={styles.subtitle}>
-          25 September 2021 <div className={styles.dot} /> Life
-        </div>
-        <div className={styles.title}>Names are complex, subtle things.</div>
-        <img className={styles.articleImage} src="/images/fire.png" />
+        <Article
+          title={post.title}
+          date={post.date}
+          subject={Subject.Personal}
+          imageSrc={post.image}
+        />
       </div>
       <div className={styles.explainer}>
         <div className={styles.spacer} />
