@@ -1,6 +1,6 @@
 import styles from "./header.module.scss";
 import Link from "next/link";
-import { cloneElement, useState } from "react";
+import { cloneElement, useRef, useState } from "react";
 import classNames from "classnames";
 import { COLORS } from "../constants/constants";
 import { Search } from "../icons/search";
@@ -9,6 +9,8 @@ export default function Header({ children }) {
   const [isSearching, toggleSearch] = useState(false);
 
   const [search, setSearch] = useState("");
+
+  const inputRef = useRef(null);
 
   return (
     <>
@@ -21,12 +23,14 @@ export default function Header({ children }) {
         <div
           onClick={() => {
             toggleSearch(true);
+            inputRef.current?.focus();
           }}
           className={classNames(styles.searchContainer, {
             [styles.searchBackground]: !isSearching,
           })}
         >
           <input
+            ref={inputRef}
             onChange={(e) => setSearch(e.target.value)}
             className={classNames(styles.input, {
               [styles.isNotSearching]: !isSearching,
@@ -38,7 +42,15 @@ export default function Header({ children }) {
           </div>
         </div>
       </div>
-      {cloneElement(children, { search })}
+      {cloneElement(children, {
+        search,
+        isSearchInputOpen: isSearching,
+        setSearch: (value: string) => {
+          setSearch(value);
+          inputRef.current.value = "";
+          toggleSearch(false);
+        },
+      })}
     </>
   );
 }

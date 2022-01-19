@@ -39,7 +39,6 @@
 
 .input {
   width: 0px;
-  transition: width 1.5s ease-in;
   background-color: #434343;
   border: none;
   padding: 0px;
@@ -53,6 +52,7 @@
 
 .input.isSearching {
   width: 200px;
+  transition: width 1.5s ease-in;
   background-color: #fafafa;
   border: 2px solid #dfdede;
   height: 30px;
