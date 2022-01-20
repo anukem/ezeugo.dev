@@ -10,7 +10,24 @@ export default function Header({ children }) {
 
   const [search, setSearch] = useState("");
 
+  const [showHeader, toggleHeader] = useState(true);
+
   const inputRef = useRef(null);
+
+  const child = cloneElement(children, {
+    search,
+    toggleHeader,
+    isSearchInputOpen: isSearching,
+    setSearch: (value: string) => {
+      setSearch(value);
+      inputRef.current.value = "";
+      toggleSearch(false);
+    },
+  });
+
+  if (!showHeader) {
+    return child;
+  }
 
   return (
     <>
@@ -42,15 +59,7 @@ export default function Header({ children }) {
           </div>
         </div>
       </div>
-      {cloneElement(children, {
-        search,
-        isSearchInputOpen: isSearching,
-        setSearch: (value: string) => {
-          setSearch(value);
-          inputRef.current.value = "";
-          toggleSearch(false);
-        },
-      })}
+      {child}
     </>
   );
 }

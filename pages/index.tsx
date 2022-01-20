@@ -15,11 +15,12 @@ export async function getStaticProps() {
   };
 }
 
-interface PostData {
+export interface PostData {
   date: string;
   id: string;
   title: string;
   image?: string;
+  contentHtml: string;
 }
 
 export default function Home({

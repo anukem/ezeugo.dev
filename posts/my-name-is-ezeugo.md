@@ -4,6 +4,8 @@ date: "09.25.21"
 image: "/images/fire.png"
 ---
 
+# Names are complex, subtle things.
+
 Names are a really interesting concept. In some ways, they're meant to be this unique identifier
 that helps add authenticity to your identity. In other ways, they're a cultural mechanism that
 binds you to the commonality of those whose name you share. For me, my name, John Ezeugo Anukem,

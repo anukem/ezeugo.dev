@@ -1,6 +1,16 @@
 import { getAllPostIds } from "lib/posts";
 import { getPostData } from "lib/posts";
-const Post = ({ postData }) => {
+import { PostData } from "pages";
+
+const Post = ({
+  postData,
+  toggleHeader,
+}: {
+  postData: PostData;
+  toggleHeader: (open: boolean) => void;
+}) => {
+  toggleHeader(false);
+
   return (
     <div>
       {postData.title}{" "}
