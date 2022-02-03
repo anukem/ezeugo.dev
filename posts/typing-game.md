@@ -4,6 +4,8 @@ date: "10.27.21"
 image: "/images/typing.png"
 ---
 
+# Writing a Typing Game is Hard.
+
 On my way to NOLA from Boston, I spent some time thinking about what the most useful thing i could write without an internet connection would be with the 4 hours i would spend in the air. In the past, I've writen everything from sudoku solvers, to solutions to as many leet code problems i could copy before i lost internet. Today, I had the bright idea to go make a typing game similar to the one at typegun.com, but in the terminal. Without a doubt, this has proven to be one of the most painful experiences I've had writing code and in many ways, exposed how reliant I am on the internet to save me from myself when I get stumped.
 
 To provide context, let me outline the requirements so what i was trying to achieve is clear.

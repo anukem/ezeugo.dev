@@ -8,7 +8,7 @@ function getMonth(month: number) {
 }
 
 export enum Subject {
-  Personal = "Travel",
+  Personal = "Personal",
 }
 
 function getDate(date: string) {

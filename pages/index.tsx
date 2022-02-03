@@ -1,10 +1,11 @@
 import styles from "@styles/home.module.scss";
 import classNames from "classnames";
 import { getSortedPostsData } from "lib/posts";
-import { PageNumber } from "@components/posts/page-number";
 import { useState } from "react";
 import { Article, Subject } from "@components/posts/article";
 import { Search } from "@components/icons/search";
+import PageNumberColumn from "@components/posts/page_number_column";
+import Link from "next/link";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -28,11 +29,13 @@ export default function Home({
   search,
   setSearch,
   isSearchInputOpen,
+  toggleHeader,
 }: {
   allPostsData: PostData[];
   search: string;
   setSearch: (value: string) => void;
   isSearchInputOpen: boolean;
+  toggleHeader: (open: boolean) => void;
 }) {
   const [selectedPost, setSelectedPost] = useState(1);
 
@@ -41,21 +44,11 @@ export default function Home({
 
   const filteredPosts = allPostsData.filter((post) => {
     return (
-      post.title.toLowerCase().includes(search.toLowerCase()) && showAllResults
+      post.title.toLowerCase().includes(search.toLowerCase()) || showAllResults
     );
   });
 
-  const pageNumbers = allPostsData.map((_, i) => {
-    return (
-      <PageNumber
-        onClick={() => setSelectedPost(i)}
-        key={i + 1 + "_page"}
-        n={i + 1}
-        isSelected={selectedPost === i}
-      />
-    );
-  });
-
+  toggleHeader(true);
   return (
     <div className={styles.pageContainer}>
       {(search !== "" || isSearchInputOpen) && (
@@ -77,7 +70,10 @@ export default function Home({
               {filteredPosts.map((post) => {
                 return (
                   <div key={post.id} className={styles.collage}>
-                    <img className={styles.searchImage} src={post.image} />
+                    <Link href={`posts/${post.id}`}>
+                      <img className={styles.searchImage} src={post.image} />
+                    </Link>
+
                     <div className={styles.subject}>{Subject.Personal}</div>
                     <div className={styles.searchTitle}>{post.title}</div>
                   </div>
@@ -93,7 +89,12 @@ export default function Home({
           </div>
         </div>
       )}
-      <div className={styles.pageNumberColumn}>{pageNumbers}</div>
+      <PageNumberColumn
+        selectedPost={selectedPost}
+        postCount={allPostsData.length}
+        onClick={(i: number) => setSelectedPost(i)}
+        className={styles.pageNumberColumn}
+      />
       <div className={styles.articleColumn}>
         <Article
           id={post.id}
@@ -120,20 +121,4 @@ export default function Home({
       </div>
     </div>
   );
-  // return (
-  //   <div className={styles.container}>
-  //     Welcome to the blog. You can see past versions of the site{" "}
-  //     <Link href={`/versions`}>here</Link>
-  //     <section>
-  //       {allPostsData.map(({ id, date, title }) => (
-  //         <Link } passHref>
-  //           <a>
-  //             <div>{title}</div>
-  //             {date}
-  //           </a>
-  //         </Link>
-  //       ))}
-  //     </section>
-  //   </div>
-  // );
 }

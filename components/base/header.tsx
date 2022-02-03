@@ -34,7 +34,6 @@ export default function Header({ children }) {
       <div className={styles.container}>
         <div className={styles.links}>
           <Link href={"/"}>Home</Link>
-          <Link href={"/"}>Most Popular</Link>
         </div>
         <div className={styles.title}>readonly.</div>
         <div

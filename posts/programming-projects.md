@@ -1,6 +1,7 @@
 ---
-title: Programming Projects I think would be fun to implement
+title: programming projects I think would be fun to implement
 date: "02.01.22"
+image: "images/programming.jpg"
 ---
 
 Just keeping a running list of all the programming projects I may never end up getting to.
