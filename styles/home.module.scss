@@ -20,10 +20,6 @@ $modal-size: 500px;
   align-items: center;
 }
 
-.spacer {
-  height: 150px;
-}
-
 .subject {
   color: #f17672;
   font-weight: bold;
@@ -95,6 +91,10 @@ $modal-size: 500px;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+}
+
+.spacer {
+  height: 150px;
 }
 
 .searchTitle {

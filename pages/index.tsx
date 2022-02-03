@@ -111,12 +111,9 @@ export default function Home({
         <div className={styles.paragraphText}>
           Hey, welcome to my blog and personal site. I'm ezeugo, an engineer,
           over thinker, and part time smash ultimate player. I graduated from
-          Columbia University in 2018 and since then have worked as an engineer
-          @ Microsoft in the Windows Mixed Reality Team, and currently work as a
-          software engineer at a
-          <span className={classNames(styles.code, styles.reconcileText)}>
-            startup
-          </span>
+          Columbia University in 2018 and since then have worked as a full stack
+          engineer. This site is like a personal playground for me. I tend to be
+          super opinionated and wanted a place to share them unsolicited.
         </div>
       </div>
     </div>

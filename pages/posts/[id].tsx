@@ -3,7 +3,6 @@ import { getPostData } from "lib/posts";
 import { PostData } from "pages";
 import styles from "./page.module.scss";
 import { getSortedPostsData } from "lib/posts";
-import PageNumberColumn from "@components/posts/page_number_column";
 import homeStyles from "../../styles/home.module.scss";
 
 const Post = ({
@@ -23,11 +22,11 @@ const Post = ({
   );
 };
 
-export async function getStaticPaths() {
-  return { paths: getAllPostIds(), fallback: false };
-}
+// export async function getStaticPaths() {
+//   return { paths: getAllPostIds(), fallback: false };
+// }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const { id } = params;
   const postData = await getPostData(id);
   const allPostsData = getSortedPostsData();

@@ -1,5 +1,5 @@
 ---
-title: programming projects I think would be fun to implement
+title: programming projects
 date: "02.01.22"
 image: "images/programming.jpg"
 ---

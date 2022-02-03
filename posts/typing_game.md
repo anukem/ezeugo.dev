@@ -1,5 +1,5 @@
 ---
-title: Writing a Typing Game is Hard.
+title: writing a typing game is hard.
 date: "10.27.21"
 image: "/images/typing.png"
 ---
