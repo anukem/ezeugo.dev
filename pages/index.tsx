@@ -112,8 +112,8 @@ export default function Home({
           Hey, welcome to my blog and personal site. I'm ezeugo, an engineer,
           over thinker, and part time smash ultimate player. I graduated from
           Columbia University in 2018 and since then have worked as a full stack
-          engineer. This site is like a personal playground for me. I tend to be
-          super opinionated and wanted a place to share them unsolicited.
+          engineer. This site is like a personal playground for me, and
+          hopefully over time, a place that i can maintain my thoughts.
         </div>
       </div>
     </div>
