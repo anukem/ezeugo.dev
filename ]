@@ -55,11 +55,11 @@ export async function getPostData(id) {
   const matterResult = matter(fileContents);
 
   const processedContent = await remark()
-    .use(remarkFootnotes)
-    .use(html)
-    .process(matterResult.content);
+    .use(html);
+    .process(matterResult.content)
+  // .use(remarkFootnotes)
+  console.log(processedContent);
   const contentHtml = processedContent.toString();
-  console.log(contentHtml);
 
   // Combine the data with the id
   return {

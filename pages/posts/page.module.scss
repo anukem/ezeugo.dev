@@ -22,3 +22,11 @@
   color: #616c7c;
   padding: 30px;
 }
+
+.pageContent a {
+  color: #e5ad7a;
+}
+
+.pageContent a + a {
+  display: block;
+}

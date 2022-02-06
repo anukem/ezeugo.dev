@@ -43,8 +43,7 @@ it represents what I believe are the best parts of who I am, but also as an act 
 would otherwise be the norm in my life. Every call and response is a reaffirmation of the notion that who
 I am and what I'm about is rooted in a culture of strength, and honor that inform every action I take.
 
-(Edited on 1.16.22)
+[Edited on 1.16.22](https://github.com/anukem/ezeugo.dev/commit/fa2b88d2eba37b8006e0ac07a9d1c7c4a21b8779)
+[And again on 2.2.22](https://github.com/anukem/ezeugo.dev/commit/1c2845a52d0c56d2049310f2c1245dcde07b65a7)
 
-(And again on 2.2.22)
-
-[^1]: I recently found that there's a couple other people with the name Ezeugo (or at least what they claim on Clubhouse).
+[^1]: I recently found that there's a couple other people with the name Ezeugo on Clubhouse!
