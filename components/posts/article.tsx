@@ -44,7 +44,8 @@ export const Article = ({
           <Image
             alt={`${title}`}
             className={styles.articleImage}
-            src={imageSrc}
+            layout="fill"
+            src={`/${imageSrc}`}
           />
           <div className={styles.overlay}>
             <Eye height="50px" width="50px" />

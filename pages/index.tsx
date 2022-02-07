@@ -131,7 +131,7 @@ export default function Home({
         <div className={styles.midSizedDot} />
         <div className={styles.explainerSubtitle}>Introduction</div>
         <div className={styles.paragraphText}>
-          Hey, welcome to my blog and personal site. I`&apos`m ezeugo, an
+          Hey, welcome to my blog and personal site. I&apos;m ezeugo, an
           engineer, over thinker, and part time smash ultimate player. I
           graduated from Columbia University in 2018 and since then have worked
           as a full stack engineer. This site is like a personal playground for

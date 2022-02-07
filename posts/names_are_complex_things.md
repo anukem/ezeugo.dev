@@ -1,7 +1,7 @@
 ---
 title: names are complex, subtle things.
 date: "09.25.21"
-image: "/images/fire.png"
+image: "images/fire.png"
 ---
 
 # Names are complex, subtle things.
