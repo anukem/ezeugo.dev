@@ -1,6 +1,6 @@
 import styles from "./header.module.scss";
 import Link from "next/link";
-import { cloneElement, useRef, useState } from "react";
+import { cloneElement, useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import { COLORS } from "../constants/constants";
 import { Search } from "../icons/search";
@@ -9,6 +9,7 @@ export default function Header({ children }) {
   const [isSearching, toggleSearch] = useState(false);
 
   const [search, setSearch] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
 
   const [showHeader, toggleHeader] = useState(true);
 
@@ -17,6 +18,7 @@ export default function Header({ children }) {
   const child = cloneElement(children, {
     search,
     toggleHeader,
+    isMobile,
     isSearchInputOpen: isSearching,
     setSearch: (value: string) => {
       setSearch(value);
@@ -29,13 +31,19 @@ export default function Header({ children }) {
     return child;
   }
 
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 480);
+  });
+
   return (
     <>
       <div className={styles.container}>
         <div className={styles.links}>
           <Link href={"/"}>Home</Link>
         </div>
-        <div className={styles.title}>readonly.</div>
+        <div className={styles.title}>
+          <Link href={"/"}>readonly.</Link>
+        </div>
         <div
           onClick={() => {
             toggleSearch(true);

@@ -42,7 +42,7 @@ export const Article = ({
         <div className={styles.imageContainer}>
           <img className={styles.articleImage} src={imageSrc} />
           <div className={styles.overlay}>
-            <Eye height="100px" width="100px" />
+            <Eye height="50px" width="50px" />
           </div>
         </div>
       </Link>

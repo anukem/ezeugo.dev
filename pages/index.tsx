@@ -27,6 +27,7 @@ export interface PostData {
 export default function Home({
   allPostsData,
   search,
+  isMobile,
   setSearch,
   isSearchInputOpen,
   toggleHeader,
@@ -36,11 +37,26 @@ export default function Home({
   setSearch: (value: string) => void;
   isSearchInputOpen: boolean;
   toggleHeader: (open: boolean) => void;
+  isMobile: boolean;
 }) {
   const [selectedPost, setSelectedPost] = useState(1);
 
   const post = allPostsData[selectedPost];
   const showAllResults = isSearchInputOpen && search === "";
+
+  const allPosts = allPostsData.map((article) => {
+    return (
+      <div className={styles.articleSpace}>
+        <Article
+          id={article.id}
+          title={article.title}
+          date={article.date}
+          subject={Subject.Personal}
+          imageSrc={article.image}
+        />
+      </div>
+    );
+  });
 
   const filteredPosts = allPostsData.filter((post) => {
     return (
@@ -96,6 +112,7 @@ export default function Home({
         className={styles.pageNumberColumn}
       />
       <div className={styles.articleColumn}>
+        <div className={styles.allPosts}>{allPosts}</div>
         <Article
           id={post.id}
           title={post.title}
