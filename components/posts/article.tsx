@@ -41,10 +41,9 @@ export const Article = ({
       <div className={styles.title}>{title}</div>
       <Link key={id} passHref href={`/posts/${id}`}>
         <div className={styles.imageContainer}>
-          <Image
+          <img
             alt={`${title}`}
             className={styles.articleImage}
-            layout="fill"
             src={`/${imageSrc}`}
           />
           <div className={styles.overlay}>

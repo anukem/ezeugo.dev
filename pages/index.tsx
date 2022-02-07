@@ -88,7 +88,7 @@ export default function Home({
                 return (
                   <div key={post.id} className={styles.collage}>
                     <Link passHref href={`posts/${post.id}`}>
-                      <Image
+                      <img
                         alt={`${post.title}`}
                         className={styles.searchImage}
                         src={post.image}
