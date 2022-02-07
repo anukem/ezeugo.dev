@@ -10,7 +10,6 @@ export function Eye({ color = "#000000", width = "30px", height = "30px" }) {
         width={width}
         height={height}
         viewBox="0 0 504.312 504.312"
-        style={{ "enable-background": "new 0 0 504.312 504.312;" }}
         xmlSpace="preserve"
       >
         <g>
