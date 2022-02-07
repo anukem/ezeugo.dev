@@ -8,8 +8,26 @@ function getMonth(month: number) {
   return months[month];
 }
 
+export function ensureUnreachable(value: never, message?: string): never {
+  throw new Error(
+    message || `Unreachable code hit with value ${String(value)}`
+  );
+}
+
 export enum Subject {
   Personal = "Personal",
+  Technical = "Technical",
+}
+
+export function getColorForSubject(subject: Subject) {
+  switch (subject) {
+    case Subject.Technical:
+      return "#239797";
+    case Subject.Personal:
+      return "#ffdab9";
+    default:
+      return ensureUnreachable(subject);
+  }
 }
 
 function getDate(date: string) {
@@ -36,7 +54,12 @@ export const Article = ({
   return (
     <>
       <div className={styles.subtitle}>
-        {dateValue} <div className={styles.dot} /> {subject}
+        {dateValue}{" "}
+        <div
+          style={{ backgroundColor: getColorForSubject(subject) }}
+          className={styles.dot}
+        />{" "}
+        {subject}
       </div>
       <div className={styles.title}>{title}</div>
       <Link key={id} passHref href={`/posts/${id}`}>

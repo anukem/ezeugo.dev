@@ -2,6 +2,7 @@
 title: names are complex, subtle things.
 date: "09.25.21"
 image: "images/fire.png"
+subject: Personal
 ---
 
 # Names are complex, subtle things.

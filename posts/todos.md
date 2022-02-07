@@ -2,6 +2,7 @@
 title: todos
 date: "02.01.22"
 image: "images/programming.jpg"
+subject: Personal
 ---
 
 [x] Figure out how to parse the markdown better so my links at the bottom don't suffer.

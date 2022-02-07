@@ -2,6 +2,7 @@
 title: programming projects
 date: "02.01.22"
 image: "images/programming.jpg"
+subject: Personal
 ---
 
 Just keeping a running list of all the programming projects I may never end up getting to.

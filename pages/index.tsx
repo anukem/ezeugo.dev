@@ -2,7 +2,11 @@ import styles from "@styles/home.module.scss";
 import classNames from "classnames";
 import { getSortedPostsData } from "lib/posts";
 import { useState } from "react";
-import { Article, Subject } from "@components/posts/article";
+import {
+  Article,
+  getColorForSubject,
+  Subject,
+} from "@components/posts/article";
 import { Search } from "@components/icons/search";
 import PageNumberColumn from "@components/posts/page_number_column";
 import Link from "next/link";
@@ -20,6 +24,7 @@ export async function getStaticProps() {
 export interface PostData {
   date: string;
   id: string;
+  subject: Subject;
   title: string;
   image?: string;
   contentHtml: string;
@@ -28,7 +33,6 @@ export interface PostData {
 export default function Home({
   allPostsData,
   search,
-  isMobile,
   setSearch,
   isSearchInputOpen,
   toggleHeader,
@@ -38,7 +42,6 @@ export default function Home({
   setSearch: (value: string) => void;
   isSearchInputOpen: boolean;
   toggleHeader: (open: boolean) => void;
-  isMobile: boolean;
 }) {
   const [selectedPost, setSelectedPost] = useState(1);
 
@@ -52,7 +55,7 @@ export default function Home({
           id={article.id}
           title={article.title}
           date={article.date}
-          subject={Subject.Personal}
+          subject={article.subject}
           imageSrc={article.image}
         />
       </div>
@@ -95,7 +98,12 @@ export default function Home({
                       />
                     </Link>
 
-                    <div className={styles.subject}>{Subject.Personal}</div>
+                    <div
+                      style={{ color: getColorForSubject(post.subject) }}
+                      className={styles.subject}
+                    >
+                      {post.subject}
+                    </div>
                     <div className={styles.searchTitle}>{post.title}</div>
                   </div>
                 );
@@ -122,7 +130,7 @@ export default function Home({
           id={post.id}
           title={post.title}
           date={post.date}
-          subject={Subject.Personal}
+          subject={post.subject}
           imageSrc={post.image}
         />
       </div>
