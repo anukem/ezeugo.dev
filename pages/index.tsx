@@ -6,6 +6,7 @@ import { Article, Subject } from "@components/posts/article";
 import { Search } from "@components/icons/search";
 import PageNumberColumn from "@components/posts/page_number_column";
 import Link from "next/link";
+import Image from "next/image";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -46,7 +47,7 @@ export default function Home({
 
   const allPosts = allPostsData.map((article) => {
     return (
-      <div className={styles.articleSpace}>
+      <div key={article.id} className={styles.articleSpace}>
         <Article
           id={article.id}
           title={article.title}
@@ -86,8 +87,12 @@ export default function Home({
               {filteredPosts.map((post) => {
                 return (
                   <div key={post.id} className={styles.collage}>
-                    <Link href={`posts/${post.id}`}>
-                      <img className={styles.searchImage} src={post.image} />
+                    <Link passHref href={`posts/${post.id}`}>
+                      <Image
+                        alt={`${post.title}`}
+                        className={styles.searchImage}
+                        src={post.image}
+                      />
                     </Link>
 
                     <div className={styles.subject}>{Subject.Personal}</div>
@@ -126,11 +131,11 @@ export default function Home({
         <div className={styles.midSizedDot} />
         <div className={styles.explainerSubtitle}>Introduction</div>
         <div className={styles.paragraphText}>
-          Hey, welcome to my blog and personal site. I'm ezeugo, an engineer,
-          over thinker, and part time smash ultimate player. I graduated from
-          Columbia University in 2018 and since then have worked as a full stack
-          engineer. This site is like a personal playground for me, and
-          hopefully over time, a place that i can maintain my thoughts.
+          Hey, welcome to my blog and personal site. I`&apos`m ezeugo, an
+          engineer, over thinker, and part time smash ultimate player. I
+          graduated from Columbia University in 2018 and since then have worked
+          as a full stack engineer. This site is like a personal playground for
+          me, and hopefully over time, a place that i can maintain my thoughts.
         </div>
       </div>
     </div>

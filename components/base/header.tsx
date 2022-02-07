@@ -27,13 +27,13 @@ export default function Header({ children }) {
     },
   });
 
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 480);
+  }, []);
+
   if (!showHeader) {
     return child;
   }
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth <= 480);
-  });
 
   return (
     <>
