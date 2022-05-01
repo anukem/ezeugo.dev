@@ -118,12 +118,14 @@ export default function Home({
           </div>
         </div>
       )}
-      <PageNumberColumn
-        selectedPost={selectedPost}
-        postCount={allPostsData.length}
-        onClick={(i: number) => setSelectedPost(i)}
-        className={styles.pageNumberColumn}
-      />
+      <div>
+        <PageNumberColumn
+          selectedPost={selectedPost}
+          postCount={allPostsData.length}
+          onClick={(i: number) => setSelectedPost(i)}
+          className={styles.pageNumberColumn}
+        />
+      </div>
       <div className={styles.articleColumn}>
         <div className={styles.allPosts}>{allPosts}</div>
         <Article
