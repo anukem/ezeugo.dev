@@ -8,8 +8,9 @@ subject: Personal
 [x] Figure out how to parse the markdown better so my links at the bottom don't suffer.
 [ ] Ability to make a post from my phone.
 [x] Make it mobile responsive
-[ ] Fix sizing issues cause my zoom wasn't at 100%
+[x] Fix sizing issues cause my zoom wasn't at 100%
 [ ] Dark mode.
+[ ] A git blame style panel on the left margin of the page that shows change over time.
 
 Just keeping a running list of all the programming projects I may never end up getting to.
 
